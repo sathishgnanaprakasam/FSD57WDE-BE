@@ -1,0 +1,23 @@
+{
+  "name": "fsd57wde-be",
+  "version": "1.0.0",
+  "description": "This is the backend application repo for FSD57WDE-E",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sathish-fullstackdeveloper/FSD57WDE-BE.git"
+  },
+  "author": "Sathish Gnanaprakasam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sathish-fullstackdeveloper/FSD57WDE-BE/issues"
+  },
+  "homepage": "https://github.com/sathish-fullstackdeveloper/FSD57WDE-BE#readme",
+  "dependencies": {
+    "mongodb": "^6.6.1"
+  }
+}
