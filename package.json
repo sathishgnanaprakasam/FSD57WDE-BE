@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/sathish-fullstackdeveloper/FSD57WDE-BE/issues"
   },
-  "homepage": "https://github.com/sathish-fullstackdeveloper/FSD57WDE-BE#readme"
+  "homepage": "https://github.com/sathish-fullstackdeveloper/FSD57WDE-BE#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
