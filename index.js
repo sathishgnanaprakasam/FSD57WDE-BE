@@ -1,50 +1,40 @@
-// import MongoClient from 'mongodb';
-const { MongoClient } = require('mongodb');
+// File handling
+const fs = require('fs');
 
-const connectToDB = async () => {
-    // define the connection string
-    const uri = `mongodb+srv://guvi:Guvi2023@atlascluster.nzeb00e.mongodb.net/?retryWrites=true&w=majority&appName=atlascluster`;
+// Read file
+// fs.readFile('test.txt', 'utf8', (err, data) => {
+//     if (err) {
+//         console.log(err);
+//         return;
+//     }
+//     console.log(data.split('\n'));
+// });
 
-    // create a new MongoClient
-    const client = new MongoClient(uri);
+// read file synchronously
+// try {
+//     const data = fs.readFileSync('test.txt', 'utf8');
+//     console.log(data);
+// } catch (error) {
+//     console.log(error);
+// }
 
-    try {
-        // connect to the client
-        await client.connect();
+// Write file
 
-        console.log('Connected to MongoDB');
+const data = '\nThis is a new line of text.';
 
-        // get the database
-        const database = client.db('sample_airbnb');
+// fs.writeFile('test.txt', data, (err) => {
+//     if (err) {
+//         console.log(err);
+//         return;
+//     }
+//     console.log('File written successfully');
+// });
 
-        // get the collection
-        const collection = database.collection('listingsAndReviews');
-
-        // display all the documents in the collection
-
-        // create a query
-        const query = { 'address.country': 'Brazil' };
-
-        const cursor = collection.find(query);
-
-        // print documents
-        // await cursor.forEach(doc => {
-        //     console.log(doc);
-        // })
-        // ascending order: 1
-        // descending order: -1
-        const result = await cursor.sort({ price: -1 }).limit(10).toArray();
-
-        const listings = result.map(listing => [listing.name, parseFloat((listing.price).toString())]);
-
-        console.log(listings);
-    } catch (e) {
-        console.error(e);
-    } finally {
-        // close the connection
-        await client.close();
-        console.log('Disconnected from MongoDB');
+// write file in append mode
+fs.appendFile('test.txt', data, (err) => {
+    if (err) {
+        console.log(err);
+        return;
     }
-}
-
-connectToDB()
+    console.log('File written successfully');
+});
