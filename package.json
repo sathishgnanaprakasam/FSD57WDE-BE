@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/sathish-fullstackdeveloper/FSD57WDE-BE/issues"
   },
-  "homepage": "https://github.com/sathish-fullstackdeveloper/FSD57WDE-BE#readme",
-  "dependencies": {
-    "mongodb": "^6.6.1"
-  }
+  "homepage": "https://github.com/sathish-fullstackdeveloper/FSD57WDE-BE#readme"
 }
