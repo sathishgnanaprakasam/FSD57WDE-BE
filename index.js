@@ -7,10 +7,10 @@ const mongoose = require('mongoose');
 // log the message connecting to the MongoDB
 console.log('Connecting to MongoDB...');
 
-// import the dotenv module
-require('dotenv').config();
+// import config module
+const config = require('./utils/config');
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(config.MONGODB_URI)
   .then(
     () => {
       console.log('Connected to MongoDB');
