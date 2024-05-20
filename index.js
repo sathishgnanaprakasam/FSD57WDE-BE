@@ -7,7 +7,10 @@ const mongoose = require('mongoose');
 // log the message connecting to the MongoDB
 console.log('Connecting to MongoDB...');
 
-mongoose.connect(`mongodb+srv://guvi:Guvi2023@atlascluster.nzeb00e.mongodb.net/`)
+// import the dotenv module
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGODB_URI)
   .then(
     () => {
       console.log('Connected to MongoDB');
