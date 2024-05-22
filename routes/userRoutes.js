@@ -3,11 +3,15 @@ const express = require('express');
 const userController = require('../controllers/userController');
 // create a new router
 const router = express.Router();
+const auth = require('../middleware/auth');
 
 // define the routes
-router.post('/', userController.register);
-router.post('/login', userController.login);
-router.post('/logout', userController.logout);
+// prefix: /users
+router.post('/', userController.register); // POST /users
+router.post('/login', userController.login); // POST /users/login
+
+router.post('/logout', auth.checkAuth, userController.logout); // POST /users/logout
+router.get('/profile', auth.checkAuth, userController.getUser); // GET /users/profile
 
 // export the router
 module.exports = router;

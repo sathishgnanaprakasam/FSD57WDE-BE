@@ -93,3 +93,83 @@ git commit -m "Initial commit"
 ```
 git push -u origin master
 ```
+
+/register endpoint
+Frontend > user provides details [username, password, email] > clicks register button
+Backend > receives the details [username, password, email] > saves the details in the database
+
+/login endpoint
+Frontend > user provides details [username, password] > clicks login button
+Backend > receives the details [username, password] > checks if the details are correct > sends a response [success or failure] > if success, set a httpOnly cookie with the token in the response > the cookie will then be set in the browser
+
+If the user has already logged in or whenever logs in fresh, the browser will have the cookie with the token.
+The token has details like the user id, user name, and the expiry date.
+
+for futher requests,
+
+Frontend > User is in the dashboard page > clicks on the profile page > We need the data of the user > make an api call to the backend with the token in the cookie
+Backend > receives the request with the token > verifies the token > check if the token is valid and not expired > if valid, check who has sent the request > extract the user id from the token > using the token, it will get the user details from the database > sends the user details as a response
+
+bcrypt - to hash the password (encrypt the password to store it securely in the database)
+jsonwebtoken - to generate the token(when the user logs in, a token will be generated and sent to the user) (so that the user can send the token in the header for further requests)
+morgan - to log the requests in the console
+mongoose - to interact with the MongoDB database
+dotenv - to store the environment variables
+cors - to enable cross-origin resource sharing
+cookie-parser - to parse the cookies in the request
+express - to create the server and manage the routes(because the nodejs server is low-level, and it will be difficult to manage the routes)
+nodemon - to restart the server automatically when there are changes in the code
+
+## Job Portal Application
+
+## Features
+
+### Public Routes - No Authentication Required
+
+- [x] User Registration
+- [x] User Login
+- [ ] View all Jobs
+
+### Private Routes - Authentication Required
+
+User Dashboard
+
+- [x] User Logout
+- [ ] User Profile
+- [ ] Update User Profile
+- [ ] Delete User Profile
+- [ ] Apply for a Job
+- [ ] View Applied Jobs
+
+Admin Dashboard
+
+- [ ] Add a Company
+- [ ] View all Companies
+- [ ] Update a Company
+- [ ] Delete a Company
+- [ ] Add a Job
+- [ ] View all Jobs
+- [ ] Update a Job
+- [ ] Delete a Job
+- [ ] View all Applications
+
+checkAuth >
+
+- receive the request
+- extract the token from the request header cookie
+  - check if the token is present
+    - if not present, send a response with a message "Unauthorized"
+    - if the token is present, verify the token
+      - decode the token using jwt.verify
+        - decoded token will now have the object with id, username, name
+        - attach the user id to the request object
+        - call the next middleware
+
+getUser>
+
+- receive the request
+- extract the user id from the request object
+- find the user in the database using the user id
+- if the user is not found, send a response with a message "User not found"
+- if the user is found, attach the user object to the response object
+- send the response
