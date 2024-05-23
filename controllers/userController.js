@@ -111,6 +111,62 @@ const userController = {
         } catch(error) {
             response.status(500).json({ message: error.message });
         }
+    },
+    // define the updateUser method
+    updateUser: async (request, response) => {
+        try {
+            // get the user id from the request object
+            const userId = request.userId;
+
+            // get the user input from the request body
+            const { username, name } = request.body;
+
+            // find the user by id in the database
+            const user = await User.findById(userId);
+
+            // if the user does not exist, return an error
+            if (!user) {
+                return response.status(404).json({ message: 'User not found' });
+            }
+
+            // update the user
+            user.username = username ? username : user.username;
+            user.name = name ? name : user.name;
+
+            // save the updated user
+            const updatedUser = await user.save();
+
+            // return a success message and the updated user
+            response.json({ message: 'User updated', user: updatedUser });
+        } catch (error) {
+            response.status(500).json({ message: error.message });
+        }
+    },
+    // define the deleteUser method
+    deleteUser: async (request, response) => {
+        try {
+            // get the user id from the request object
+            const userId = request.userId;
+
+            // find the user by id in the database
+            const user = await User.findById(userId);
+
+            // if the user does not exist, return an error
+            if (!user) {
+                return response.status(404).json({ message: 'User not found' });
+            }
+
+            // delete the user
+            await User.findByIdAndDelete(userId);
+
+            // clear the token cookie
+            response.clearCookie('token');
+
+            // return a success message
+            response.json({ message: 'User deleted' });
+        } catch (error) {
+            response.status(500).json({ message: error.message });
+        }
     }
 } 
 

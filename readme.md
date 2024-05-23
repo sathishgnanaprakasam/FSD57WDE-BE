@@ -135,14 +135,15 @@ nodemon - to restart the server automatically when there are changes in the code
 User Dashboard
 
 - [x] User Logout
-- [ ] User Profile
-- [ ] Update User Profile
-- [ ] Delete User Profile
+- [x] User Profile
+- [x] Update User Profile
+- [x] Delete User Profile
 - [ ] Apply for a Job
 - [ ] View Applied Jobs
 
 Admin Dashboard
 
+- [ ] View all Users
 - [ ] Add a Company
 - [ ] View all Companies
 - [ ] Update a Company
