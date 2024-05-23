@@ -149,8 +149,9 @@ Admin Dashboard
 - [x] Delete a User by ID
 - [x] Add a Company
 - [x] View all Companies
-- [x] Update a Company
-- [x] Delete a Company
+- [x] View a Company by ID
+- [x] Update a Company by ID
+- [x] Delete a Company by ID
 - [ ] Add a Job
 - [ ] Update a Job
 - [ ] Delete a Job
