@@ -10,7 +10,7 @@ const auth = require('../middleware/auth');
 router.post('/', userController.register); // POST /users
 
 router.get('/', auth.checkAuth, auth.isAdmin, userController.getUsers); // GET /users
-router.get('/:id', auth.checkAuth, auth.isAdmin, userController.getUserById); // GET /users/:id
+
 
 router.post('/login', userController.login); // POST /users/login
 
@@ -18,6 +18,10 @@ router.post('/logout', auth.checkAuth, userController.logout); // POST /users/lo
 router.get('/profile', auth.checkAuth, userController.getUser); // GET /users/profile
 router.put('/profile', auth.checkAuth, userController.updateUser); // PUT /users/profile
 router.delete('/profile', auth.checkAuth, userController.deleteUser); // DELETE /users/profile
+
+router.get('/:id', auth.checkAuth, auth.isAdmin, userController.getUserById); // GET /users/:id
+router.put('/:id', auth.checkAuth, auth.isAdmin, userController.updateUserById); // PUT /users/:id
+router.delete('/:id', auth.checkAuth, auth.isAdmin, userController.deleteUserById); // DELETE /users/:id
 
 // export the router
 module.exports = router;
