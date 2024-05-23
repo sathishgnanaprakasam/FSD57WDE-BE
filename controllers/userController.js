@@ -179,6 +179,26 @@ const userController = {
         } catch (error) {
             response.status(500).json({ message: error.message });
         }
+    },
+    // define the getUserById method
+    getUserById: async (request, response) => {
+        try {
+            // get the user id from the request parameters
+            const userId = request.params.id;
+
+            // find the user by id in the database
+            const user = await User.findById(userId);
+
+            // if the user does not exist, return an error
+            if (!user) {
+                return response.status(404).json({ message: 'User not found' });
+            }
+
+            // return the user
+            response.json({ message: 'User found', user });
+        } catch (error) {
+            response.status(500).json({ message: error.message });
+        }
     }
 } 
 

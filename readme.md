@@ -144,6 +144,9 @@ User Dashboard
 Admin Dashboard
 
 - [x] View all Users
+- [x] View a User by ID
+- [x] Update a User by ID
+- [x] Delete a User by ID
 - [ ] Add a Company
 - [ ] View all Companies
 - [ ] Update a Company

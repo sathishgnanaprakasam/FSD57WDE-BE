@@ -8,7 +8,10 @@ const auth = require('../middleware/auth');
 // define the routes
 // prefix: /users
 router.post('/', userController.register); // POST /users
+
 router.get('/', auth.checkAuth, auth.isAdmin, userController.getUsers); // GET /users
+router.get('/:id', auth.checkAuth, auth.isAdmin, userController.getUserById); // GET /users/:id
+
 router.post('/login', userController.login); // POST /users/login
 
 router.post('/logout', auth.checkAuth, userController.logout); // POST /users/logout
