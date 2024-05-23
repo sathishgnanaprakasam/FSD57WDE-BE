@@ -153,8 +153,9 @@ Admin Dashboard
 - [x] Update a Company by ID
 - [x] Delete a Company by ID
 - [ ] Add a Job
-- [ ] Update a Job
-- [ ] Delete a Job
+- [ ] View a Job by ID
+- [ ] Update a Job by ID
+- [ ] Delete a Job by ID
 - [ ] View all Applications
 
 checkAuth >
