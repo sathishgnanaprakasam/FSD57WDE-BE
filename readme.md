@@ -147,10 +147,10 @@ Admin Dashboard
 - [x] View a User by ID
 - [x] Update a User by ID
 - [x] Delete a User by ID
-- [ ] Add a Company
-- [ ] View all Companies
-- [ ] Update a Company
-- [ ] Delete a Company
+- [x] Add a Company
+- [x] View all Companies
+- [x] Update a Company
+- [x] Delete a Company
 - [ ] Add a Job
 - [ ] Update a Job
 - [ ] Delete a Job
