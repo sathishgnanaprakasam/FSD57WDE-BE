@@ -167,6 +167,18 @@ const userController = {
         } catch (error) {
             response.status(500).json({ message: error.message });
         }
+    },
+    // define the getUsers method
+    getUsers: async (request, response) => {
+        try {
+            // find all the users in the database
+            const users = await User.find();
+
+            // return the users
+            response.json({ message: 'Users found', users });
+        } catch (error) {
+            response.status(500).json({ message: error.message });
+        }
     }
 } 
 

@@ -143,13 +143,12 @@ User Dashboard
 
 Admin Dashboard
 
-- [ ] View all Users
+- [x] View all Users
 - [ ] Add a Company
 - [ ] View all Companies
 - [ ] Update a Company
 - [ ] Delete a Company
 - [ ] Add a Job
-- [ ] View all Jobs
 - [ ] Update a Job
 - [ ] Delete a Job
 - [ ] View all Applications
