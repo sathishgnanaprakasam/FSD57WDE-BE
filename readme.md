@@ -156,7 +156,7 @@ Admin Dashboard
 - [x] Add a Job
 - [x] Update a Job by ID
 - [x] Delete a Job by ID
-- [] View all Applications
+- [x] View all Applications
 
 checkAuth >
 
