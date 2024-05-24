@@ -128,7 +128,8 @@ nodemon - to restart the server automatically when there are changes in the code
 
 - [x] User Registration
 - [x] User Login
-- [ ] View all Jobs
+- [x] View all Jobs
+- [x] View a Job by ID
 
 ### Private Routes - Authentication Required
 
@@ -138,8 +139,8 @@ User Dashboard
 - [x] User Profile
 - [x] Update User Profile
 - [x] Delete User Profile
-- [ ] Apply for a Job
-- [ ] View Applied Jobs
+- [x] Apply for a Job
+- [x] View Applied Jobs
 
 Admin Dashboard
 
@@ -152,11 +153,10 @@ Admin Dashboard
 - [x] View a Company by ID
 - [x] Update a Company by ID
 - [x] Delete a Company by ID
-- [ ] Add a Job
-- [ ] View a Job by ID
-- [ ] Update a Job by ID
-- [ ] Delete a Job by ID
-- [ ] View all Applications
+- [x] Add a Job
+- [x] Update a Job by ID
+- [x] Delete a Job by ID
+- [] View all Applications
 
 checkAuth >
 

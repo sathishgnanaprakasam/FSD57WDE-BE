@@ -5,6 +5,7 @@ const userRouter = require('./routes/userRoutes');
 const companyRouter = require('./routes/companyRoutes');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const jobRouter = require('./routes/jobRoutes');
 
 // middleware to allow cross-origin requests from any domain
 app.use(cors({
@@ -24,6 +25,7 @@ app.use(morgan('dev'));
 // defining the endpoints or routes
 app.use('/users', userRouter);
 app.use('/companies', companyRouter);
+app.use('/jobs', jobRouter);
 
 // export the app module
 module.exports = app;
